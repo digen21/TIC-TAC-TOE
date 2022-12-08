@@ -48,9 +48,9 @@ function turnClick (e) {
 
 
 function turn (cellId, player) {
-    origBoard[cellId] = player;                                             //getting the cell Id and storing into player
+    origBoard[cellId] = player;                            //getting the cell Id and storing into player
     document.getElementById(cellId).innerText = player;   //displaying the player in cell id
-    let gameWon = checkWin(origBoard, player);              // player = checking certain player has won the game
+    let gameWon = checkWin(origBoard, player);            // player = checking certain player has won the game
     if (gameWon) gameOver(gameWon)
 }
 
@@ -58,7 +58,7 @@ function turn (cellId, player) {
 
 
 function checkWin (board, player) {
-    let plays = board.reduce((a, e, i) =>      //reducer used to calculate the values inside the array
+    let plays = board.reduce((a, e, i) =>            //reducer used to calculate the values inside the array
         (e === player) ? a.concat(i) : a, []);
     //a = accumulator  e = element  i = index       if element == player then storing element into an array
 
